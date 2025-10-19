@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="lobo.css">
+  <link rel="icon" href="iI.png">
+</head>
+<body>
+  <main>
+    <section class="formulario">
+      <h1 style="text-align: center; font-size: 300%;">R E G I S T R O</h1>
+      <form id="registroForm">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="curso">Curso:</label>
+        <input type="number" id="curso" required min="1">
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" required min="1">
+
+        <label for="nivel">Nivel de inglés que Consideras que Tienes  :</label>
+        <select id="nivel" required>
+          <option value="">Selecciona tu nivel</option>
+          <option value="basico">Básico</option>
+          <option value="intermedio">Intermedio</option>
+          <option value="avanzado">Avanzado</option>
+        </select>
+
+        <button type="submit" id="ok-btn">OK</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("registroForm");
+    const okBtn = document.getElementById("ok-btn");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const curso = document.getElementById("curso").value.trim();
+      const edad = document.getElementById("edad").value.trim();
+      const nivel = document.getElementById("nivel").value.trim();
+
+      if (!nombre || !curso || !edad || !nivel) {
+        alert("Por favor completa todos los campos.");
+        return;
+      }
+      setTimeout(() => { window.location.href = "index.html"; }, 1000);
+    });
+  </script>
+
+
+<a href="/inicio.html" id="flotante"
+>*</a>
+
+
+ 
+</body>
+</html>
